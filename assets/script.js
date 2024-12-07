@@ -1,3 +1,14 @@
+// Import the Three.js library
+// import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.155.0/build/three.module.js';
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
+console.log(THREE); // Should display the Three.js module
+console.log(OrbitControls); // Should not be undefined
+console.log(GLTFLoader); // Should not be undefined
+console.log("console test");
+
 // Three.js basic setup
 const container = document.getElementById('animation-container');
 const scene = new THREE.Scene();
@@ -9,7 +20,7 @@ container.appendChild(renderer.domElement);
 
 // Create a rotating cube
 const geometry = new THREE.BoxGeometry();
-const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+const material = new THREE.MeshBasicMaterial({ color: 0x0000ff });
 const cube = new THREE.Mesh(geometry, material);
 scene.add(cube);
 

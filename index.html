@@ -5,13 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
     <link rel="stylesheet" href="assets/styles.css">
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.155.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.155.0/examples/jsm/"
+          }
+        }
+    </script>
 </head>
 <body>
     <div id="animation-container"></div>
     <nav>
         <a href="about.html">About</a>
     </nav>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script>
-    <script src="assets/script.js"></script>
+    <script type="module" src="assets/script.js"></script>
 </body>
 </html>
