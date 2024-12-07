@@ -18,7 +18,12 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 container.appendChild(renderer.domElement);
 
-// Create a rotating cube
+// Add OrbitControls for interactivity
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true; // Smooth dragging
+controls.dampingFactor = 0.05;
+
+// Create a cube
 const geometry = new THREE.BoxGeometry();
 const material = new THREE.MeshBasicMaterial({ color: 0x0000ff });
 const cube = new THREE.Mesh(geometry, material);
@@ -29,8 +34,12 @@ camera.position.z = 5;
 // Animation loop
 function animate() {
     requestAnimationFrame(animate);
-    cube.rotation.x += 0.01;
-    cube.rotation.y += 0.01;
+
+    // Remove auto-rotation
+    // cube.rotation.x += 0.01;
+    // cube.rotation.y += 0.01;
+
+    controls.update(); // Required for damping to work
     renderer.render(scene, camera);
 }
 animate();
